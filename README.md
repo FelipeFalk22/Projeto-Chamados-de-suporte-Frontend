@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# 📞 Projeto de Chamados de Suporte – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositório contém o **frontend** de um sistema de **Chamados de Suporte**, desenvolvido em **React.js**, com foco em organização, autenticação de usuários e gerenciamento de categorias e chamados.
 
-## Available Scripts
+O projeto foi pensado para fins **acadêmicos e de portfólio**, simulando um sistema real utilizado em empresas para controle de atendimentos e solicitações técnicas.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **React.js**
+* **JavaScript (ES6+)**
+* **HTML5**
+* **CSS3**
+* **Axios** (requisições HTTP)
+* **React Router DOM** (navegação entre páginas)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Estrutura do Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+Projeto-Chamados-de-suporte-Frontend
+├── public/
+│   ├── index.html
+│   └── assets e ícones
+│
+├── src/
+│   ├── components/
+│   │   └── CookieBanner.jsx
+│   │
+│   ├── pages/
+│   │   ├── Login.jsx
+│   │   ├── CadastroUsuario.jsx
+│   │   ├── Usuarios.jsx
+│   │   ├── EditarUsuario.jsx
+│   │   ├── Categorias.jsx
+│   │   └── CategoriaForm.jsx
+│   │
+│   ├── services/
+│   │   └── api.js
+│   │
+│   ├── App.jsx
+│   ├── index.js
+│   └── estilos (CSS)
+│
+├── package.json
+└── README.md
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 🔐 **Login de usuários**
+* 👤 **Cadastro, listagem e edição de usuários**
+* 🗂️ **Gerenciamento de categorias de chamados**
+* 🍪 **Banner de consentimento de cookies (LGPD)**
+* 🔗 Integração com **API backend** via Axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🌐 Integração com Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O frontend se comunica com o backend através do arquivo:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+src/services/api.js
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Nesse arquivo é configurada a **URL base da API**, além de possíveis headers (como autenticação).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Exemplo:
 
-## Learn More
+```js
+import axios from "axios";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const api = axios.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: true
+});
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default api;
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ▶️ Como Executar o Projeto
 
-### Analyzing the Bundle Size
+### Pré-requisitos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Node.js instalado
+* NPM ou Yarn
 
-### Making a Progressive Web App
+### Passos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+# Instale as dependências
+npm install
 
-### Advanced Configuration
+# Execute o projeto
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+O sistema estará disponível em:
 
-### Deployment
+```
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🍪 Cookies e LGPD
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O sistema conta com um **banner de cookies**, permitindo que o usuário aceite o uso, armazenando o consentimento no navegador, seguindo boas práticas da **LGPD**.
+
+---
+
+## 🎯 Objetivo do Projeto
+
+* Praticar desenvolvimento frontend com React
+* Simular um sistema real de chamados
+* Aplicar organização de pastas (pages, components, services)
+* Demonstrar integração frontend + backend
+
+---
+
+## 📌 Observações
+
+* Este projeto representa **apenas o frontend**
+* É necessário que o **backend esteja em execução** para funcionamento completo
+* Ideal para demonstração em **GitHub e portfólio profissional**
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Felipe Fallk**
+Com base no projeto de **Edinilson Vida**
+
+📎 Projeto criado para fins educacionais e demonstração técnica.
